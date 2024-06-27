@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <!-- <img src="facebook.png" alt="Logo"> Replace with your logo URL -->
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 
+    <div class="judul">
+        <h1>Landing Page</h1>
+    </div> -->
+
+    <main>
+
+        <div id="home"></div>
+
+        <section id="" class="hero">
+            <h2>Welcome to Our Website</h2>
+            <p>Discover amazing things and connect with passionate people.</p>
+        </section>
+
+        <div id="about"></div>
+
+        <section>
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor justo ac nunc pulvinar, a
+                scelerisque ligula congue. Sed eu congue elit. Sed vel nibh eu libero tincidunt fermentum non vel
+                massa. Integer sit amet metus ac ex fermentum vestibulum. Ut euismod odio sit amet scelerisque
+                venenatis. In hac habitasse platea dictumst. Integer convallis, enim vel euismod tincidunt, odio
+                nisi suscipit urna, vel congue enim justo sit amet turpis.</p>
+        </section>
+
+        <div id="services"></div>
+
+        <section>
+            <h2>Our Services</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor justo ac nunc pulvinar, a
+                scelerisque ligula congue. Sed eu congue elit. Sed vel nibh eu libero tincidunt fermentum non vel
+                massa. Integer sit amet metus ac ex fermentum vestibulum. Ut euismod odio sit amet scelerisque
+                venenatis. In hac habitasse platea dictumst. Integer convallis, enim vel euismod tincidunt, odio
+                nisi suscipit urna, vel congue enim justo sit amet turpis.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        &copy; 2023 Your Company Name
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple form validation
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Perform your form validation logic here
+            // For simplicity, we'll just alert a success message
+            alert('Form submitted successfully!');
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Comparison Widget</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twentytwenty/1.0.0/twentytwenty.css"
+    />
+  </head>
+  <body>
+    <main
+      mv-app="imageComparison"
+      mv-storage="https://github.com/DmitrySharabin/image-comparison-widget"
+      mv-bar="no-login"
+      style="--slider-thumb-position: 50%"
+    >
+      <img property="after" alt="After" src="bali.jpeg" />
+      <img property="before" alt="Before" src="balibandw.jpeg" />
+      <input
+        type="range"
+        property="slider"
+        mv-storage="none"
+        min="0"
+        max="100"
+        value="50"
+      />
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const slider = document.querySelector('[property="slider"]');
+          const beforeImage = document.querySelector('[property="before"]');
+          const app = document.querySelector('[mv-app]');
+      
+          slider.addEventListener('input', function() {
+            const value = slider.value;
+            app.style.setProperty('--slider-thumb-position', `${value}%`);
+            beforeImage.style.width = `${value}%`;
+          });
+      
+          // Initial setting
+          const initialValue = slider.value;
+          app.style.setProperty('--slider-thumb-position', `${initialValue}%`);
+          beforeImage.style.width = `${initialValue}%`;
+        });
+      </script>
+  </body>
+</html>
